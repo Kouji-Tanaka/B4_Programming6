@@ -49,7 +49,7 @@ void Bisection(double a, double b)
                 a = c;
             }
             
-            if(abs(b-a)<D_MIN)
+            if(fabs(b-a)<D_MIN)
             {
                 break;
             }
@@ -64,7 +64,7 @@ void Newton_Rapson(double x_0)
     double x_1;
     for (int i=0;i<N;i++)
     {
-        if(abs(dF(x_0))<D_MIN)
+        if(fabs(dF(x_0))<D_MIN)
         {
             printf("Newton-Rapson:\tError\n");
             return;
