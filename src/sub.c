@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../include/sub.h"
 
 double F(double x)
 {
