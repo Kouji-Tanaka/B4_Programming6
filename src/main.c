@@ -6,6 +6,7 @@
 #define B_2 2.5
 #define X_0 2.1
 #define N 100
+#define D_MIN 1.0e-10
 
 void Bisection(double a, double b);
 void Newton_Rapson(double x_0);
@@ -47,6 +48,11 @@ void Bisection(double a, double b)
             {
                 a = c;
             }
+            
+            if(abs(b-a)<D_MIN)
+            {
+                break;
+            }
         }
 
         printf("Bisection:\tans=%.10f\n", c);
@@ -58,7 +64,7 @@ void Newton_Rapson(double x_0)
     double x_1;
     for (int i=0;i<N;i++)
     {
-        if(abs(dF(x_0))<1.0e-10)
+        if(abs(dF(x_0))<D_MIN)
         {
             printf("Newton-Rapson:\tError\n");
             return;
